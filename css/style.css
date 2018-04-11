@@ -1,0 +1,39 @@
+#myElement {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    line-height: 100px;
+}
+
+#myElement.ui-draggable-dragging {
+    background-color: green;
+}
+#draggableElement1, #draggableElement2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    float: left;
+}
+
+#draggableElement2 {
+    background-color: green;
+}
+
+#droppableElement {
+    width: 100px;
+    height: 70px;
+    border: 1px dashed red;
+    text-align: center;
+    color: red;
+    padding-top: 30px;
+    float: right;
+}
+
+.hovered {
+    background-color: gray;
+}
