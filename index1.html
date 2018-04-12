@@ -1,64 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Fancytree - Example</title>
 
-    <title>Title</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <link href="skin-win8/ui.fancytree.css" rel="stylesheet">
+    <script src="js/jquery.fancytree.js"></script>
+
+    <!-- (Irrelevant source removed.) -->
+
+    <script type="text/javascript">
+        $(function(){
+            // Initialize the tree inside the <div>element.
+            // The tree structure is read from the contained <ul> tag.
+            $("#tree").fancytree({
+                checkbox: true,
+                activate: function(event, data) {
+                    $("#echoActive").text(data.node.title);
+//              alert(node.getKeyPath());
+                    if( data.node.url )
+                        window.open(data.node.url, data.node.target);
+                },
+                deactivate: function(event, data) {
+                    $("#echoSelected").text("-");
+                },
+                focus: function(event, data) {
+                    $("#echoFocused").text(data.node.title);
+                },
+                blur: function(event, data) {
+                    $("#echoFocused").text("-");
+                },
+                lazyLoad: function(event, data){
+                    // Simulate a slow Ajax request
+                    var dfd = new $.Deferred();
+                    data.result = dfd.promise();
+                    window.setTimeout(function(){
+                        dfd.resolve([
+                            { title: "Lazy node 1", lazy: true },
+                            { title: "Simple node 2", select: true }
+                        ]);
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+
+    <!-- (Irrelevant source removed.) -->
+
 </head>
-<body>
-<div class="clearfix">
 
-    <div class="container-fluid">
-       <div class="row">
-           <div id="sidebar" >
-               <span id="position"></span>
-               <div id="dragbar"></div>
-               sidebar
-           </div>
-           <div id="main" >
-               main
-           </div>
-       </div>
-       <div class="row">
-           <div class="bd-example bd-example-tabs">
-               <div class="tab-content" id="nav-tabContent">
-                   <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                       <p>Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.</p>
-                   </div>
-                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                       <p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute laboris nisi. Labore labore veniam irure irure ipsum pariatur mollit magna in cupidatat dolore magna irure esse tempor ad mollit. Dolore commodo nulla minim amet ipsum officia consectetur amet ullamco voluptate nisi commodo ea sit eu.</p>
-                   </div>
-                   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                       <p>Sint sit mollit irure quis est nostrud cillum consequat Lorem esse do quis dolor esse fugiat sunt do. Eu ex commodo veniam Lorem aliquip laborum occaecat qui Lorem esse mollit dolore anim cupidatat. Deserunt officia id Lorem nostrud aute id commodo elit eiusmod enim irure amet eiusmod qui reprehenderit nostrud tempor. Fugiat ipsum excepteur in aliqua non et quis aliquip ad irure in labore cillum elit enim. Consequat aliquip incididunt ipsum et minim laborum laborum laborum et cillum labore. Deserunt adipisicing cillum id nulla minim nostrud labore eiusmod et amet. Laboris consequat consequat commodo non ut non aliquip reprehenderit nulla anim occaecat. Sunt sit ullamco reprehenderit irure ea ullamco Lorem aute nostrud magna.</p>
-                   </div>
-               </div>
-               <nav>
-                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                       <a class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                       <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-                       <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-                   </div>
-               </nav>
-
-           </div>
-       </div>
-    </div>
-
+<body class="example">
+<h1>Fancytree API</h1>
+<div class="description">
+    Demonstrate some Fancytree and FancytreeNode API methods.
+    <br>
+    See the <a href="https://github.com/mar10/fancytree/wiki/TutorialApi"
+               target="_blank" class="external">API Tutorial</a>
+    for details.
+</div>
+<div>
+    <label for="skinswitcher">Skin:</label> <select id="skinswitcher"></select>
 </div>
 
-<script src="js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-3.2.1.slim.min.js"><\/script>')</script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/draganddrop.js"></script>
-<script src="js/dragbar.js"></script>
+<div id="tree">
+    <ul>
+        <li>This simple node (and the following) have been created from html.
+        <li id="id1" title="This is item #1">item1 with key and tooltip
+        <li id="id2">item2 with key "id2"
+
+        <li id="id3" class="folder">Standard Folder with some children
+            <ul>
+                <li id="id3.1">Sub-item 3.1
+                <li id="id3.2">Sub-item 3.2
+            </ul>
+
+        <li id="id4">item 4. Note that also non-folders (i.e. 'documents') may have child nodes
+            <ul>
+                <li id="id4.1">Sub-item 4.1
+                <li id="id4.2">Sub-item 4.2
+                <li id="id4.3">Sub-item 4.3
+                    <ul>
+                        <li id="id4.3.1">Sub-item 4.3.1
+                        <li id="id4.3.2">Sub-item 4.3.2
+                            <ul>
+                                <li id="id4.3.2.1">Sub-item 4.3.2.1
+                                <li id="id4.3.2.2">Sub-item 4.3.2.2
+                            </ul>
+                    </ul>
+                <li id="id4.4">Sub-item 4.4
+            </ul>
+
+        <li id="id5" class="expanded folder">Advanced examples
+            <ul>
+                <li data="key: 'node5.1'">item5.1: Using data attribute as an alternative way to specify a key.
+                <li data="key: 'node5.3', folder: true">item5.1: Using data attribute as an alternative way to specify a folder.
+                <li id="id5.2">Sub-item 5.2
+                <li>Item without a key. Keys are optional (generated automatically), but may be used in the callbacks
+            </ul>
+    </ul>
+</div>
+
+<div>Active node: <span id="echoActive">-</span></div>
+<div>Focused node: <span id="echoFocused">-</span></div>
+<!-- (Irrelevant source removed.) -->
 </body>
 </html>

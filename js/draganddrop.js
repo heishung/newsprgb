@@ -1,9 +1,8 @@
-$('#myElement').draggable();
-$("#draggableElement1").draggable({
+$(".draggableElement1").draggable({
     'cursor': 'move',
     'snap': '#droppableElement'
 });
-$("#draggableElement2").draggable({
+$(".draggableElement2").draggable({
     'cursor': 'move',
     'snap': '#droppableElement'
 });
@@ -16,3 +15,15 @@ $(".droppableElement").droppable({
 function drop(event, ui) {
     alert(ui.draggable.attr('id') + ' dropped on me');
 }
+
+
+
+
+
+
+$(document).ready(function () {
+    $('.boxb').draggable();
+    $('#body').droppable({
+
+    })
+});
