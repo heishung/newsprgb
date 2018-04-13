@@ -1,4 +1,37 @@
+* {
+    font-size: 12px;
+}
+.box-ittem-side-bar{
+    overflow-y: scroll;
+    resize: vertical;
+    height: 264px;
+    width: 100%;
+}
 
+.box-tab-bottom{
+    height: 178px;
+}
+ul.fancytree-container{
+    height: 264px;
+}
+.scroll-col{
+    overflow-y: auto;
+}
+.tab-content>.active {
+
+    padding-left: 5px;
+}
+.title-tab{
+    padding: 0;flex: 0 0 auto;margin: 0px   ;background-color: rgba(12, 116, 228, 0.41);width: 100%;line-height: 20px;padding-left: 10px;
+}
+.nav-link.active{
+    border-color: black black black!important;
+    border-top: none;
+    border-radius: 0px!important;
+}
+span.fancytree-checkbox{
+    display: none;
+}
 .table-sidebar td, .table-sidebar th{
     padding: 0.2rem!important;
     padding-left: 7px!important;
