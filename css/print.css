@@ -1,0 +1,61 @@
+body {
+    font-family: Georgia, �Times New Roman�, serif;
+    font-size: 12pt;
+    height: 100%;
+}
+html {
+    height: auto;
+}
+.cabinet-header#header {
+    position: static !important;
+}
+.cabinet-content-holder .cabinet-content {
+    padding-top: 36px !important;
+}
+.navbar-toggler,
+#footer {
+    display: none;
+}
+
+#header .navbar-brand {
+    padding-left: 0 !important;
+}
+.cabinet-content-holder .cabinet-content {
+    display: block;
+}
+.cabinet-content .wire-form .title {
+    text-transform: uppercase;
+    padding-top: 36px;
+    page-break-after: avoid;
+    page-break-before: avoid;
+    font-size: 18pt;
+}
+.cabinet-content .wire-form .bankwire-receipt {
+    padding-top: 18px;
+}
+#header .navbar-brand::first-letter ,
+.wire-form .title::first-letter {
+    margin: 0;
+    padding: 0;
+}
+.wire-form .hint + div {
+    display: none;
+}
+
+.wire-form {
+    page-break-before: none;
+    page-break-after: none;
+    page-break-inside: avoid;
+}
+@page {
+    size: A4 portrait;
+    margin: 10mm;
+}
+
+/*RTL*/
+body[dir="rtl"] #header .navbar-brand {
+    padding-right: 0 !important;
+}
+body[dir="rtl"] .wire-form dd{
+    padding-right: 0 !important;
+}

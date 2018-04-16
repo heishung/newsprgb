@@ -1,0 +1,3 @@
+function customScroll(destroy){if($('.scroll-form').length>0){if(destroy){$('.scroll-form').enscroll('destroy');return false;}
+$('.scroll-form').enscroll({showOnHover:true,verticalTrackClass:'scroll-track',verticalHandleClass:'scroll-handle',easingDuration:70});return true;}}
+function selectCustomScroll(){if($('select-dropdown .options').length>0){$('select-dropdown .options').enscroll({showOnHover:true,verticalTrackClass:'select-scroll-track',verticalHandleClass:'select-scroll-handle',easingDuration:100});}}

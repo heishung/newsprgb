@@ -36,3 +36,10 @@ span.fancytree-checkbox{
     padding: 0.2rem!important;
     padding-left: 7px!important;
 }
+
+ .fx-logo {
+    background: url('../images/logo.svg');
+    width: 80px;
+    height: 80px;
+    margin: 0;
+}
