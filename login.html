@@ -5,13 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/fonts.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://direct.fxpro.group/fonts/fontawesome-webfont.woff2?v=4.7.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" media="print" href="css/print.css">
 
 </head>
-<body>
+<body class="login-body body-img-1">
 
 <div class="fx-wrapper login-page">
    <header id="header">
@@ -24,12 +24,12 @@
                     <li>
                         <!----><div class="lang-holder">
                             <ul class="lang-nav">
-                                <li class="dropdown">
-                                    <a aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" class="dropdown-toggle lang-icon lang-icon-vi"></a>
+                                <li class="dropdown" id="show-menu">
+                                    <a id="btn-click-whow" role="button" class="dropdown-toggle lang-icon lang-icon-vi"></a>
                                     <div class="lang-dropdown">
                                         <div class="fx-container">
                                             <ul>
-                                                <!----><li><a href="javascript:void(0)" class="lang-icon lang-icon-en"><span>English</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ar"><span>العربية</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ja"><span>日本語</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-zh"><span>中文简体</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-th"><span>Thai</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-es"><span>Español</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-pt"><span>Português</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-id"><span>Bahasa Indonesian</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ko"><span>한국어</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ru"><span>Русский</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ms"><span>Bahasa Melayu</span></a></li>
+                                                <!----><li><a  href="javascript:void(0)" class="lang-icon lang-icon-en"><span>English</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ar"><span>العربية</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ja"><span>日本語</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-zh"><span>中文简体</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-th"><span>Thai</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-es"><span>Español</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-pt"><span>Português</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-id"><span>Bahasa Indonesian</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ko"><span>한국어</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ru"><span>Русский</span></a></li><li><a href="javascript:void(0)" class="lang-icon lang-icon-ms"><span>Bahasa Melayu</span></a></li>
                                             </ul>
                                             <a class="lang-close-button" href="javascript:void(0)">Đóng</a>
                                         </div>
@@ -53,14 +53,65 @@
                 </div>
             </div>
             <div class="col-lg-6 col-xl-5">
-                <form autocomplete="false" id="register-form" novalidate="" class="ng-untouched ng-pristine ng-invalid">
+                <div class="login-form-holder" id="box-login-form">
+                    <div class="login-form">
+                        <div class="login-form-title d-flex align-items-center justify-content-between">
+                            <h2 class="form-title">Đăng nhập</h2>
+                            <div class="link-holder">
+                                <a class="border-link register-real-account" id="login-real-account" href="#" >Đăng ký</a>
+                            </div>
+                        </div>
+                        <form id="login-form" novalidate="" class="ng-untouched ng-pristine ng-invalid">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="ltr-form-control empty-field form-control ng-untouched ng-pristine ng-invalid" id="login-input-email" name="email" required="" type="text" validate-onblur="" maxlength="47" pattern="^(([^<>()\[\]\\.,;:\s@&quot;]+(\.[^<>()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$">
+                                    <label for="login-input-email">Email</label>
+                                    <!---->
+                                </div>
+                                <div class="form-group">
+                                    <input autocomplete="new-password" class="ltr-passwod-form-control empty-field form-control ng-untouched ng-pristine ng-invalid" data-cip-id="input" id="login-input-password" name="password" required="" type="password">
+                                    <span class="show-password">Hiển thị mật khẩu</span>
+                                    <label for="login-input-password">Mật khẩu</label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <label class="custom-checkbox d-flex align-items-center">
+                                                <input class="custom-control-input ng-untouched ng-pristine ng-valid" name="staySignedIn" type="checkbox">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">Duy trì đăng nhập</span>
+                                            </label>
+                                        </div>
+                                        <div class="restore-pass-block">
+                                            <a href="/vi/login/forgot-password">Khôi phục mật khẩu</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!----><div class="form-group">
+                                <re-captcha required="" id="ngrecaptcha-3"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6Lce800UAAAAALWOWU6pzP9gs3JlBXtATfY0qeSN&amp;co=aHR0cHM6Ly9kaXJlY3QuZnhwcm8uZ3JvdXA6NDQz&amp;hl=en&amp;v=v1523554879111&amp;size=normal&amp;cb=20at0xeye687" width="304" height="78" role="presentation" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response-3" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></re-captcha>
+                            </div>
+                                <!---->
+                                <div class="form-group">
+                                    <button class="btn btn-green arrow" id="login-signin-button" type="submit" disabled="">Đăng nhập</button>
+                                </div>
+                                <div class="text-danger hidden">
+                                    <i aria-hidden="true" class="fa fa-exclamation-triangle"></i> Đăng nhập thất bại. Kiểm tra email và mật khẩu của bạn
+                                </div>
+                                <!---->
+                                <!---->
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+                <form  autocomplete="false" style="display: none" id="register-form" novalidate="" class="ng-untouched ng-pristine ng-invalid">
                     <div class="login-form-holder">
                         <div class="protect-text d-flex justify-content-end align-items-center"><i aria-hidden="true" class="fa fa-lock"></i>Chúng tôi  bảo vệ dữ liệu của bạn một cách nghiêm ngặt</div>
                         <div class="login-form">
                             <div class="login-form-title d-flex align-items-center justify-content-between">
                                 <h2 class="form-title">Tạo Hồ sơ  FxPro Direct của bạn</h2>
                                 <div class="link-holder">
-                                    <a class="border-link" id="login-real-account" href="/vi/login">Đăng nhập</a>
+                                    <a class="border-link login-real-account" id="login-real-account" href="#" >Đăng nhập</a>
                                 </div>
                             </div>
 
@@ -160,7 +211,9 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="risk">
-                        <div><a href="https://www.fxpro.co.uk/group/trade-responsibly" target="_blank">Trách nhiệm giao dịch</a>: Giao dịch CFD liên quan tới rủi ro thua lỗ nhất định. Hãy tham khảo <a href="https://datarepo.fxpro.co.uk/legal/scb/Risk_Disclosure_Notice.pdf" target="_blank">‘Văn bản công bố rủi ro’</a>. <strong>FxPro Global Markets Ltd</strong> được cấp phép và quy định bởi SCB (<a href="http://www.scb.gov.bs/reg_entities.html" target="_blank">giấy phép số SIA-F184</a>) và là một phần của FxPro Group Limited. Các công ty con khác của FxPro Group Limited được cấp phép và quy định bởi CySEC, FCA and DFSA.</div>
+                        <div><a href="#" target="_blank">Trách nhiệm giao dịch</a>: Giao dịch CFD liên quan tới rủi ro thua lỗ nhất định. Hãy tham khảo
+                            <a href="#" target="_blank">‘Văn bản công bố rủi ro’</a>. <strong>FxPro Global Markets Ltd</strong> được cấp phép và quy định bởi SCB (
+                            <a href="#" target="_blank">giấy phép số SIA-F184</a>) và là một phần của FxPro Group Limited. Các công ty con khác của FxPro Group Limited được cấp phép và quy định bởi CySEC, FCA and DFSA.</div>
                     </div>
                 </div>
                 <div class="col-md-2 hidden-md-down">
@@ -174,9 +227,11 @@
     </div>
     
 </div>
-
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/jsct.js"></script>
 
 </body>
 </html>
