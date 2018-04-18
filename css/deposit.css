@@ -1,0 +1,17 @@
+.item-top-deposit{
+    max-height: 82px;
+}
+.content-item-deposit{
+    height: 171px;
+    word-spacing: 2px;
+    line-height: 23px;
+    font-weight: bold;
+    color: #484848d9;
+    overflow-y: scroll;
+}
+.img-logo-deposit {
+    width: 100%;
+    height: 80px;
+
+}
+

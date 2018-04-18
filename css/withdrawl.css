@@ -1,0 +1,38 @@
+.logo-card-1 {
+    width: 45px;
+    background-position: -77px -275px;
+    height: 30px;
+    background-image: url(../images/icon-small.jpg);
+    background-size: 264px 200px;
+}
+.logo-card-2 {
+    width: 45px;
+    background-position: -20px -275px;
+    height: 30px;
+    background-image: url(../images/icon-small.jpg);
+    background-size: 264px 200px;
+}
+.logo-card-3 {
+    width: 45px;
+    background-position: -20px -343px;
+    height: 30px;
+    background-image: url(../images/icon-small.jpg);
+    background-size: 264px 200px;
+}
+.logo-card-4 {
+    width: 45px;
+    background-position: -20px -315px;
+    height: 30px;
+    background-image: url(../images/icon-small.jpg);
+    background-size: 264px 200px;
+}
+.logo-card-5 {
+    width: 45px;
+    background-position: -77px -312px;
+    height: 30px;
+    background-image: url(../images/icon-small.jpg);
+    background-size: 264px 200px;
+}
+.max-with-300{
+    max-width: 300px;
+}
