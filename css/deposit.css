@@ -2,10 +2,10 @@
     max-height: 82px;
 }
 .content-item-deposit{
-    height: 171px;
+    height: 200px;
     word-spacing: 2px;
     line-height: 23px;
-    font-weight: bold;
+    font-weight: 500;
     color: #484848d9;
     overflow-y: scroll;
 }
@@ -13,5 +13,10 @@
     width: 100%;
     height: 80px;
 
+}
+.item-deposit {
+    max-width: 340px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 

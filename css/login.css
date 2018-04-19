@@ -918,7 +918,7 @@ body[dir="rtl"] .tooltip.tooltip-top .tooltip-inner:before {
     position: absolute;
     top: 1.25rem;
     right: 1.25rem;
-    background: url(../../images/form/show-pass-grey.svg) 0 0 no-repeat;
+    background: url(../images/show-pass-grey.svg) 0 0 no-repeat;
     background-size: 100% 100%;
     width: 1.875rem;
     height: 1.25rem;
@@ -930,7 +930,7 @@ body[dir="rtl"] .show-password {
     left: 1.25rem;
 }
 .show-password.active {
-    background: url(../../images/form/show-pass-active.svg) 0 0 no-repeat;
+    background: url(../images/show-pass-active.svg) 0 0 no-repeat;
     background-size: 100% 100%;
 }
 .hint {
